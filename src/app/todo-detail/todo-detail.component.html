@@ -1,0 +1,5 @@
+<div *ngIf="todo" [class.finished]="todo.done">
+  <span>{{todo.text}}</span>
+  <button (click)="TodoCancelClick(todo);" class="btn btn-cancel">X</button>
+  <button (click)="TodoDoneClick(todo);" class="btn btn-done">&radic;</button>
+</div>
