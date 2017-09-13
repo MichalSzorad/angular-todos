@@ -65,8 +65,6 @@ describe('TodoDetailComponent', () => {
     const todo1 = { text: 'Test1', id: 1, done: false, createdTime: new Date() } as Todo;
     const todo2 = { text: 'Test2', id: 2, done: true, createdTime: new Date() } as Todo;
 
-
-
     component.todo = todo1;
     fixture.detectChanges();
     const div = el.querySelector('div');
