@@ -18,7 +18,7 @@ export class TodosComponent implements OnInit {
   constructor(private todoService: TodoService) {
   }
 
-  AddClick(text: string): void {
+  addTodo(text: string): void {
     if (!text.trim().length) {
       return;
     }
@@ -42,7 +42,7 @@ export class TodosComponent implements OnInit {
       .then(todos => this.todos = todos);
   }
 
-  RemoveAllClick(): void {
+  removeAll(): void {
     this.todoService.removeAll().then(() => {
       this.todos = [];
     });

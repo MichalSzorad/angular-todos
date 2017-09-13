@@ -1,8 +1,8 @@
 <div>
   <div>
     <input type="text" #inputText />
-    <button (click)="AddClick(inputText.value); inputText.value='';" class="btn btn-add">Add</button>
-    <button (click)="RemoveAllClick()" class="btn btn-remove">Remove All</button>
+    <button (click)="addTodo(inputText.value); inputText.value='';" class="btn btn-add">Add</button>
+    <button (click)="removeAll()" class="btn btn-remove">Remove All</button>
   </div>
   <div>
     <ul class="todos">

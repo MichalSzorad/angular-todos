@@ -24,7 +24,7 @@ export class TodoService {
   storage = new LocalStorage('todo-service-');
 
   createTodo(text: string): Todo {
-    const todo = { text, id: new Date().getTime(), done: false, createdTime:new Date() } as Todo;
+    const todo = { text, id: new Date().getTime(), done: false, createdTime: new Date() } as Todo;
     return todo;
   }
 
