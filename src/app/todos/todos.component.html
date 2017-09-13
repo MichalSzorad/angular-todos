@@ -6,7 +6,7 @@
   </div>
   <div>
     <ul class="todos">
-      <li *ngFor="let todo of todos" class="col-1-4" [class.finished]="todo.done">
+      <li *ngFor="let todo of todos" class="col-1-4" >
        <todo-detail [todo]="todo" [TodoDoneClick]="finishTodo" [TodoCancelClick]="deleteTodo"></todo-detail>
       </li>
     </ul>
