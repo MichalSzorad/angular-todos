@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { autobind } from 'core-decorators';
-import { Todo } from '../types';
+
+import { TodoDetailComponent } from '../todo-detail/todo-detail.component';
 import { TodoService } from '../todo.service';
-import { TodoDetailComponent } from '../todo-detail/todo-detail.component'
+import { Todo } from '../models';
 
 @autobind
 @Component({

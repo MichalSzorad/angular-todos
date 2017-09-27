@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { TodoDetailComponent } from './todo-detail.component';
-import { Todo } from '../types'
+import { Todo } from '../models';
+
 describe('TodoDetailComponent', () => {
   let component: TodoDetailComponent;
   let fixture: ComponentFixture<TodoDetailComponent>;
