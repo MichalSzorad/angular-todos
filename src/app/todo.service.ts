@@ -1,40 +1,34 @@
-import { Todo } from './types';
+import { Todo } from './models';
 import { LocalStorage } from './utils';
 
 export class TodoService {
 
-  storage = new LocalStorage('todo-service-');
+  storage = new LocalStorage('todo-service');
 
   createTodo(text: string): Todo {
-    const todo = { text, id: new Date().getTime(), done: false, createdTime: new Date() } as Todo;
-    return todo;
+    return { text, id: new Date().getTime(), done: false, createdTime: new Date() };
   }
 
-  async addTodo(todo: Todo): Promise<void> {
+  async addTodo(todo: Todo) {
     const todos = await this.getTodos();
     this.saveTodos([...todos, todo]);
-    return Promise.resolve(null);
   }
 
-  async removeAll(): Promise<void> {
+  async removeAll() {
     this.storage.clear('todos');
-    return Promise.resolve(null);
   }
 
-  async saveTodos(todos: Todo[]): Promise<void> {
+  async saveTodos(todos: Todo[]) {
     this.storage.set('todos', JSON.stringify(todos));
-    return Promise.resolve(null);
   }
 
-  async deleteTodo(id: Number): Promise<void> {
+  async deleteTodo(id: Number) {
     const todos = await this.getTodos();
     this.saveTodos(todos.filter(todo => todo.id !== id));
-    return Promise.resolve(null);
   }
 
   async getTodos(): Promise<Todo[]> {
-    const todos = JSON.parse(this.storage.get('todos') || '[]').map(data => data as Todo);
-
+    const todos = JSON.parse(this.storage.get('todos') || '[]').map(data => data);
     return Promise.resolve(todos);
   }
 }
