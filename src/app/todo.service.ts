@@ -1,23 +1,5 @@
 import { Todo } from './types';
-class LocalStorage {
-
-  private storage = localStorage;
-
-  constructor(private prefix: string) {
-  }
-
-  set(key: string, data: string) {
-    this.storage[this.prefix + key] = data;
-  }
-
-  get(key: string) {
-    return this.storage[this.prefix + key];
-  }
-
-  clear(key: string) {
-    delete this.storage[this.prefix + key];
-  }
-}
+import { LocalStorage } from './utils';
 
 export class TodoService {
 
